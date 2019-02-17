@@ -1,5 +1,3 @@
-require 'pry'
-
 # takes 2 arguments, a hash called data and a season, then returns the first name of that season's winner
 def get_first_name_of_season_winner(data, season)
   data[season].each do |this_contestant|
@@ -48,8 +46,8 @@ end
 def get_average_age_for_season(data, season)
   age_total = 0
   contestants_total = 0
-  data[season].each do |contestant_hash|
-    age_total += (contestant_hash["age"]).to_i
+  data[season].each do |this_contestant|
+    age_total += (this_contestant["age"]).to_i
     contestants_total += 1
   end
   (age_total / contestants_total.to_f).round(0)
